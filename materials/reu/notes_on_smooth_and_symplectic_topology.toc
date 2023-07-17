@@ -1,0 +1,32 @@
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {subsection}{\numberline {1.1}Newtonian Mechanics $\Rightarrow $ Hamiltonian Mechanics}{3}
+\contentsline {subsection}{\numberline {1.2}Hamiltonian Mechanics $\Rightarrow $ Symplectic Geometry}{6}
+\contentsline {subsection}{\numberline {1.3}Some Cute Symplectic Geometry}{8}
+\contentsline {paragraph}{Complex Hamilton's Equations}{8}
+\contentsline {paragraph}{Embedded Geometry Determines Dynamics}{9}
+\contentsline {subsection}{\numberline {1.4}Some Deep Symplectic Topology}{10}
+\contentsline {subsection}{\numberline {1.5}Open Problems}{11}
+\contentsline {section}{\numberline {2}Manifold Basics}{13}
+\contentsline {subsection}{\numberline {2.1}What Is A Manifold?}{13}
+\contentsline {subsection}{\numberline {2.2}Fiber And Vector Bundles}{17}
+\contentsline {subsection}{\numberline {2.3}Review Of Linear Algebra}{21}
+\contentsline {subsection}{\numberline {2.4}Constructions Of Bundles}{28}
+\contentsline {subsection}{\numberline {2.5}Natural Bundles On Smooth Manifolds}{30}
+\contentsline {subsection}{\numberline {2.6}Maps Of Manifolds}{34}
+\contentsline {subsection}{\numberline {2.7}Constructing Manifolds}{38}
+\contentsline {subsection}{\numberline {2.8}Pullback, Lie Derivatives, Exterior Derivatives And Integration}{43}
+\contentsline {section}{\numberline {3}Manifold Homology}{48}
+\contentsline {subsection}{\numberline {3.1}What Is Homology?}{48}
+\contentsline {subsection}{\numberline {3.2}Singular Homology}{53}
+\contentsline {subsection}{\numberline {3.3}Simplicial Homology}{57}
+\contentsline {subsection}{\numberline {3.4}De Rham Cohomology}{61}
+\contentsline {section}{\numberline {4}Symplectic And Contact Geometry}{65}
+\contentsline {subsection}{\numberline {4.1}Translating Hamiltonian Mechanics}{65}
+\contentsline {subsection}{\numberline {4.2}Symplectic Manifolds}{66}
+\contentsline {subsection}{\numberline {4.3}Contact Manifolds}{69}
+\contentsline {subsection}{\numberline {4.4}Classic Theorems}{72}
+\contentsline {subsection}{\numberline {4.5}Open Problems}{72}
+\contentsline {subsection}{\numberline {4.6}Symmetries}{72}
+\contentsline {section}{\numberline {5}Appendix}{72}
+\contentsline {subsection}{\numberline {5.1}Proofs For Section 2\hbox {}}{72}
+\contentsline {subsection}{\numberline {5.2}Implicit And Inverse Function Theorems}{76}

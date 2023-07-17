@@ -1,0 +1,296 @@
+\documentclass[12pt]{article}
+
+\title{Notes On Smooth Topology And Symplectic Embedding Problems}
+\author{Julian Chaidez}
+
+
+\addtolength{\oddsidemargin}{-.25in}
+\addtolength{\evensidemargin}{-.25in}
+\addtolength{\textwidth}{0.5in}
+\addtolength{\topmargin}{-.25in}
+\addtolength{\textheight}{0.5in}
+
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amscd}
+\usepackage[dvips]{graphics}
+\usepackage{overpic}
+\usepackage[mathscr]{euscript}
+\usepackage{titlesec}
+%\usepackage{graphicx}
+%\usepackage[pdftex]{graphicx}
+%\usepackage{epstopdf}
+\usepackage{hyperref}
+\usepackage{color}
+
+\newcommand{\mc}[1]{{\mathcal #1}}
+\newcommand{\lyxdot}{.}
+
+\numberwithin{equation}{section}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{lemma-definition}[theorem]{Lemma-Definition}
+\newtheorem{sublemma}[theorem]{Sublemma}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{disclosure}[theorem]{Disclosure}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{claim}[theorem]{Claim}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{remarks}[theorem]{Remarks}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{convention}[theorem]{Convention}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{openproblem}[theorem]{Open Problem}
+\newtheorem*{acknowledgments}{Acknowledgments}
+\newtheorem*{examplestar}{Example}
+\newtheorem*{conv}{Convention}
+
+\newcommand{\step}[1] {\medskip \noindent {\em Step #1.\/}}
+
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+
+\newcommand{\eqdef}{\;{:=}\;}
+\newcommand{\fedqe}{\;{=:}\;}
+
+\renewcommand{\frak}{\mathfrak}
+
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Sp}{{\mathbb S}}
+\newcommand{\A}{{\mathcal A}}
+\newcommand{\op}{\operatorname}
+\newcommand{\dbar}{\overline{\partial}}
+\newcommand{\zbar}{\overline{z}}
+\newcommand{\wbar}{\overline{w}}
+\newcommand{\ubar}{\overline{u}}
+\newcommand{\Spinc}{\op{Spin}^c}
+\newcommand{\SO}{\op{SO}}
+\newcommand{\SU}{\op{SU}}
+\newcommand{\U}{\op{U}}
+\newcommand{\M}{\mc{M}}
+\newcommand{\Spin}{\op{Spin}}
+\newcommand{\End}{\op{End}}
+\newcommand{\Aut}{\op{Aut}}
+\newcommand{\Hom}{\op{Hom}}
+\newcommand{\Ker}{\op{Ker}}
+\newcommand{\Coker}{\op{Coker}}
+\newcommand{\Tr}{\op{Tr}}
+\newcommand{\Lie}{\op{Lie}}
+\newcommand{\SW}{\op{SW}}
+\newcommand{\tensor}{\otimes}
+\newcommand{\too}{\longrightarrow}
+\newcommand{\vu}{\nu}
+\newcommand{\neta}{\eta}
+\newcommand{\Nbar}{\overline{N}}
+\newcommand{\vbar}{\overline{v}}
+\newcommand{\CZ}{\op{CZ}}
+\newcommand{\current}{\mathscr{C}}
+\newcommand{\calabi}{\mathcal{V}}
+
+\newcommand{\feed}{-\!\!\!\hspace{0.7pt}\mbox{\raisebox{3pt}
+{$\shortmid$}}\,}
+
+\newcommand{\union}{\bigcup}
+\newcommand{\intt}{\bigcap}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\Fix}{\op{Fix}}
+
+\newcommand{\define}[1]{{\em #1\/}}
+
+\newcommand{\note}[1]{[{\em #1}]}
+
+\newcommand{\rb}[1]{\raisebox{1.5ex}[-1.5ex]{#1}}
+
+\newcommand{\Span}{\op{Span}}
+
+\newcommand{\bpm}{\begin{pmatrix}}
+\newcommand{\epm}{\end{pmatrix}}
+
+\renewcommand{\epsilon}{\varepsilon}
+
+\newcommand{\tr}{\textcolor{red}}
+
+\renewcommand{\arraystretch}{1.2}
+
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\bfseries}
+\titleformat*{\subsubsection}{\bfseries}
+\titleformat*{\paragraph}{\bfseries}
+\titleformat*{\subparagraph}{\bfseries}
+
+\begin{document}
+
+\begin{center}
+{\bf 2018 Berkeley Geometry REU Projects}\\
+\end{center}
+
+\paragraph{Note} For each of the projects described in these notes, we give the following information. First, we give an overview of the project idea. Then we give a rough outline of the stages of the project as we foresee them, and we give a list of the topics and methods that will probably be inovolved. Last we rate, on a scale of $1$ to $10$, the projects with respect to $4$ metrics.
+
+\begin{itemize}
+	\item[-] {\bf Technical Difficulty:} This is a rating of how much theory the project will involve. Projects where this number is low will be easy to get started on. Projects where this number is high will require a substantial amount of background reading (which will need to be done quickly). 
+	\item[-] {\bf Best Case Result Quality:} This is a rating of how good the results of the project will be if everything goes as well as possible. Over $7$ means a journal paper. $9$ or above means you solve a known open problem.
+	\item[-] {\bf Guarantee Result Quality:} This is a rating of how well the project is guaranteed to go if you see it through until the end. 
+	\item[-] {\bf Community Interest:} This is a rating of how much the math community will care about the methods and results. 
+\end{itemize}
+
+\paragraph{Project 1:} (High Systolic Ratio) Does every contact $(2n-1)$-manifold $(Y,\xi)$ admit a constant $C(Y,\xi)$ such that, for any contact form $\alpha$ on $(Y,\xi)$, we have:
+\[
+\text{min}\{\mathcal{A}(\gamma)|\gamma \text{ a Reeb orbit of }(Y,\alpha)\} \le C(Y,\xi) \cdot \text{vol}(Y,\alpha)^{1/n} \text{ ? }
+\]
+The $\frac{1}{n}$ factor is to make both sides scale the same way under the rescaling $\alpha \mapsto c\alpha$. This was recently answered to the negative in dimension $3$ by \cite{abhs2017a}. They showed that for any contact manifold $(Y,\xi)$ and any fixed $C$, there is a contact form that violates this bound. The key tool for them was the theory of compatible open books and some results on disk dynamics.
+
+{\bf Project Profile:} This project has three parts, of ascending difficulty. (1) Generalize the result to certain higher dimensional contact manifolds under some assumptions on the binding of the contact manifold. (2) Generalize the results of \cite{abhs2017b}, where they perform a similar construction while preserving the property of dynamical convexity. (3) Generalize the results to all higher dimensional contact manifolds.
+
+{\bf Update:} A paper doing (1) and (3) was published this month! See \cite{m2018}. (2) is still very worth doing, although this makes the project harder.
+
+This project will involve using basic manifold theory, open books, contact geometry and some explicit constructions in coordinates.
+
+\begin{itemize}
+	\item[-] {\bf Technical Difficulty:} 8/10. This is a technical project relative to the others.
+	\item[-] {\bf Best Case Result Quality:} 7/10. Journal quality paper.
+	\item[-] {\bf Guarantee Result Quality:} 8/10. Basically guaranteed to work.
+	\item[-] {\bf Community Interest:} 7/10. Result (2) is pretty interesting.
+\end{itemize}
+
+\paragraph{Project 2:} (Ball Of Mud Flow) Let $X \subset \R^{2n}$ be a convex domain containing $0$. We can define a ``ball of mud'' flow on the boundary by setting:
+\[
+Y_t := \partial X_t \qquad X_t := \{p \in \R^{2n}| |p - x| \le t \text{ for some }x \in X\}
+\]
+Let $c_1(Y_t)$ denote the minimal action of a Reeb orbit on $Y_t$, let $\op{vol}(X_t)$ denote the volume $X_t$ in $\R^{2n}$ and let $\op{sys}(Y_t) := c_1(Y_t)/\op{vol}(X_t)^{1/n}$.
+
+Question: Is it true that $\frac{d}{dt}(\op{sys}(Y_t)) \ge 0$ for all $t \in \R^+$? Can we prove this assuming some curvature bounds on $Y$ or that $Y$ is $C^\infty$ close to the sphere? If one can prove thus for any $Y$, this would prove the Viterbo conjecture, which states that:
+\[
+\op{sys}(Y_t) \le (n!)^{1/n}
+\]
+
+{\bf Project Profile:} Here is a possible outline of the stages of this project. (1) Learn about Reeb dynamics on convex hypersurfaces, how to compute time derivative of sys, polytope Reeb dynamics. (2) Perform calculation of time derivative, in general and under special assumptions. (3) If this doesn't work, write about some examples where it fails.
+
+This project will involve analysis on sub-manifolds of $\R^{2n}$, extrinsic curvature quantities, possibly some low-regularity analysis. It has an analytical flavor.
+
+\begin{itemize}
+	\item[-] {\bf Technical Difficulty:} 6/10. Medium technical difficulty.
+	\item[-] {\bf Best Case Result Quality:} 9/10. Possibly solve a big open problem.
+	\item[-] {\bf Guarantee Result Quality:} 3/10. Could fail to get theorem.
+	\item[-] {\bf Community Interest:} 7/10. Depends a lot on the end result.
+\end{itemize}
+
+\paragraph{Project 3:} (Knottedness Properties Of Reeb Orbits) What is the relationship between the geometry of a contact manifold and the topology of Reeb orbits or transverse knots in the contact manifold? There are many more specific variants of this vague but interesting question. In this project, you will use a Python package developed by Hutchings and myself (described in the forthcoming paper \cite{ch2018}) and the knot theory program SnapPy to analyze the knot-theoretic properties of Reeb orbits on the boundaries of 4d polytopes, with the goal of formulating some interesting conjectures about these properties.
+
+{\bf Project Profile:} Here is an outline of the possible stages of this project. (1) Learn a little about knot and link invariants. (2) Study some of the data from \cite{ch2018} and try to understand formulate conjectures for the invariants. (3) Try to prove some conjectures, or just write about data.
+
+This program will involve programming in Python, knot theory and the theory of classical transverse knot invariants. 
+
+\begin{itemize}
+	\item[-] {\bf Technical Difficulty:} 3/10. Low technical difficulty.
+	\item[-] {\bf Best Case Result Quality:} 8/10. Could produce interesting conjectures.
+	\item[-] {\bf Guarantee Result Quality:} 3/10. Very open ended, possibly no result.
+	\item[-] {\bf Community Interest:} 5/10. Depends on outcome.
+\end{itemize}
+
+\paragraph{Project 4:} (Kirby Diagram Python Package) Kirby diagrams are a type of $2$-d drawing that encodes the instructions for constructing a compact $4$-manifold with boundary. It is notoriously difficult to do complicated calculations with Kirby diagrams, and only a few researchers (Gompf, Akbalut) are able to use them fluidly. Some problems, like showing that certain Kirby diagrams represent the standar sphere (c.f. \cite{a2009}), have thus only been addressable by this short list of researchers.
+
+The goals of this project will be two-fold: first, to create a Python class for Kirby diagrams allowing one to perform formal calculations; and, second, to explore the possibility of applying machine learning (with, for instance, PyTorch) to train a Python program to simplify Kirby diagrams.
+
+{\bf Project Profile:} Here is an outline of the possible stages of this project. (1) Learn about Kirby calculus and handlebody theory. (2) Design the Python package for Kirby diagrams. I can help you get started with some seed code for Link diagrams. (3) Learn about Pytorch and design simplification program. (4) Try to simplify Capell-Shaneson homotopy spheres.
+
+This program will involve programming in Python, Kirby calculus (which is extremely cool) and some learning about basic machine learning.  
+
+\begin{itemize}
+	\item[-] {\bf Technical Difficulty:} 4/10. Low-medium technical difficulty.
+	\item[-] {\bf Best Case Result Quality:} 8/10. Completing (1)-(4) is journal quality.
+	\item[-] {\bf Guarantee Result Quality:} 5/10. It's possible (4) would fail.
+	\item[-] {\bf Community Interest:} 6/10. Depends on end result.
+\end{itemize}
+
+\paragraph{Project 5:} (Random Knots) Let $\mathcal{K}(\R^3)$ denote the (countable) set of isotopy classes of oriented knots in $\R^3$. We now define a family of probability distributions on $\mathcal{K}(\R^3)$, which are functions $\mu:\mathcal{K}(\R^3) \to [0,\infty)$ such that $\sum_{[K] \in \mathcal{K}(\R^3)} \mu([K]) = 1$.
+
+ For each $n \in \{3,\dots,\infty\} \subset \Z$, we define $\mu^n_{\op{CD}}:\mathcal{K}(\R^3) \to [0,\infty)$ as so. Let $[0,1]^{3n}$ be the space of ordered sets of $n$ points in $\R^3$ and let $\mu_{\op{std}}:[0,1]^{3n} \to \R^+$ be the uniform distribution on $[0,1]^{3n}$ (so $\mu(p) = 1$ for all $p$). We have a function $\mathcal{CD}:[0,1]^{3n} \to \mathcal{K}(\R^3)$ that sends a an $n$-tuple $p_1,p_2,p_3,\dots,p_n$ to the class $[\mathcal{CD}](p)$ of the knot $\mathcal{CD}(p)$ found by ``connecting the dots,'' i.e. whose image is:
+\[\mathcal{CD}(p) = \overline{p_np_1} \cup (\cup_{i} \overline{p_ip_{i+1}})\]
+For almost all sets of points $(p_1,\dots,p_n) \in [0,1]^{3n}$, $\mathcal{CD}(p)$ is an actual knot (i.e, the lines $\overline{p_ip_{i+1}}$ don't intersect), so $[\mathcal{CD}](p)$ is defined almost everywhere. For each $[K] \in \mathcal{K}(\R^3)$, let $\chi_{[K]}:[0,1]^{3n} \to \{0,1\}$ be the characteristic function that sends a set of points $p = (p_1,\dots,p_n)$ to $1$ is $[\mathcal{CD}](p) = [K]$ and to $0$ otherwise. 
+
+We define the probability distribution $\mu^n_{CD}$ to be:
+\[
+\mu_{\op{CD}}^n:\mathcal{K}(\R^3) \to [0,\infty) \qquad \mu_{\op{CD}}^n([K]) := \int_{[0,1]^{3n}} \mu_{\op{CD}}(p) d\vec{p}\]
+This is the pushforward distribution of $\mu_{\op{std}}$ through $[\mathcal{CD}]$, i.e. $\mu^n_{\op{CD}} = [\mathcal{CD}]^*\mu_{\op{std}}$.
+
+Questions: 
+\begin{enumerate}
+\item[(a)] Does the limit $\lim_{n \to \infty} \mu^n_{\op{CD}}$ converge to a probability distribution?
+\item[(b)] As $n \to \infty$, does the probability distribution focus near knots with particularly properties? For instance, are the most probable knots under $\mu^n_{\op{CD}}$ the ones that have genus $f(n)$ for some function $f$ of $n$? One can ask similar questions for the Alexander polynomial, Jones polynomial, etc.
+\item[(c)] If (a) is false, is there another probability distribution besides $\mu_{\op{std}}$ (or another shape rather than the cube $[0,1]^3$) that one can use to make this true?
+\end{enumerate}  
+
+{\bf Project Profile:} Here is an outline of the possible stages of this project. (1) Learn some knot theory: knot diagrams, genus, knot polynomials. (2) Do some computer experiments. I have a knot package that already has these capabilities, so coding might not be necessary. (3) See if one can formulate any conjectures. (4) Try to prove the conjectures.
+
+This program will involve basic knot theory, basic probability theory, and possibly programming (depending on the interests of the participants). 
+
+\begin{itemize}
+	\item[-] {\bf Technical Difficulty:} 2/10. A very accessible project.
+	\item[-] {\bf Best Case Result Quality:} 7/10. Journal quality if the result is cool.
+	\item[-] {\bf Guarantee Result Quality:} 4/10. Not sure what will happen.
+	\item[-] {\bf Community Interest:} 4/10. This is a really original project (a combination of very different kinds of math) so there isn't much of a community here.
+\end{itemize}
+
+\paragraph{Project 6:} (Cylindrical Contact Homology Of Toric Domains) Filtered cylindrical contact homology $CCH^{\le A}_*(Y,\alpha)$ is a powerful invariant of contact manifolds with contact forms and a rich source of embedding obstructions. In particular, there is a sequence of capacity-like quantities $c_k$ derived from the filtered cylindrical contact homology satisfying an embedding monotonicity property: if $X$ is a Liouville domain and $X' \subset X$ is a Liouville sub-domain, then $c_k(X') \le c_k(X)$ for all $k$. These $c_k$ were constructed in \cite{gh2017}
+
+Computing $CCH^{\le A}(Y,\alpha)$ can be difficult; this project will be about calculating it for certain toric domains. 
+
+{\bf Project Profile:} The project will have several parts, of varying difficulty. (1) Check the conjectural picture of Hutchings for the contact homology of convex and concave toric domains. (2a) Generalize this picture to higher-dimensional toric domains. (2b) Generalize this picture to (certain) convex domains that are neither convex nor concave.
+
+This project will involve using ODE methods, combinatorics and algebra. I will participate in this project to help with the more technical aspects.
+
+\begin{itemize}
+	\item[-] {\bf Technical Difficulty:} 9/10. This project is very technical.
+	\item[-] {\bf Best Case Result Quality:} 8/10. Journal quality.
+	\item[-] {\bf Guarantee Result Quality:} 5/10. Depends on if we complete (2a) or (2b).
+	\item[-] {\bf Community Interest:} 8/10. There is strong interest in the contact geometry community for results like this.
+\end{itemize}
+
+\paragraph{Project 7:} (Contact Manifolds With Finitely Many Orbits) Let $(Y,\alpha)$ be a contact $(2n-1)$-manifold with a non-degenerate contact form $\alpha$. Non-degenerate means that if $\gamma:[0,T] \to Y$ is a Reeb orbit with $\gamma(T) = \gamma(0)$, then $d\Phi_{T,\gamma(0)}:\xi_{\gamma(0)} \to \xi_{\gamma(0)}$ has no $1$ eigenvalues. Conjecture: $(Y,\alpha)$ has at-least $n$ simple closed orbits.
+
+Several recent advances have been made towards understanding this question. For instance, under certain topological assumptions on the contact form and in dimension 3, Cristofaro-Gardiner-Hutchings-Pomerleano proved that there are either 2 or infinity Reeb orbits (see \cite{cghp2018}). In the direction of examples and possible counter-examples, Albers-Geiges-Zehmisch (see \cite{agz2017}) constructed new examples of contact manifolds $(Y,\alpha)$ with finitely many Reeb orbits. In their paper, they only construct contact manifolds with certain finite numbers of orbits. The purpose of this project will be to extend their results by finding new examples with their construction and answering the following question: can any finite number of Reeb orbits be achieved via their construction? Are certain finite numbers provably impossible?
+
+{\bf Project Profile:} Here are the phases of this project. (1) Read the half of the paper \cite{agz2017} to understand the construction. (2) Peruse the literature for more examples of symplectic manifolds with Hamiltonian $S^1$ actions than the ones in \cite{agz2017}. This may require the use of symplectic orbifolds. (3a) Apply the construction to these new examples to see which new orbit numbers can be achieved. (3b) Find orbit numbers that are provably impossible (may be achievable through some homology theory). 
+
+This project will involve using basic homology theory, Hamiltonian $S^1$ actions and some Morse theory.
+
+\begin{itemize}
+	\item[-] {\bf Technical Difficulty:} 7/10. This project will be pretty technical. It depends on whether or not orbifolds become involved.
+	\item[-] {\bf Best Case Result Quality:} 8/10. Journal quality.
+	\item[-] {\bf Guarantee Result Quality:} 5/10. Depends on outcome of (3a) and (3b).
+	\item[-] {\bf Community Interest:} 8/10. There is strong interest in the contact geometry community.
+\end{itemize}
+
+\paragraph{Project 8:} (Open Books With Special Monodromy) 
+
+\begin{thebibliography}{100}
+\bibitem{a2009} \emph{Capell-Shaneson Homotopy Spheres Are Standard} S. Akbalut, \url{https://arxiv.org/pdf/0907.0136.pdf}.
+\bibitem{abhs2017a} \emph{Contact Forms With Large Systolic Ratio In Dimension 3} A. Abbondondalo, B. Bramham, U. Hryniewicz, P. Salomao. \url{https://arxiv.org/pdf/1709.01621.pdf}.
+\bibitem{abhs2017b} \emph{Systolic ratio, index of closed orbits and convexity for tight contact forms on the three-sphere.} A. Abbondondalo, B. Bramham, U. Hryniewicz, P. Salomao. \url{https://arxiv.org/pdf/1710.06193.pdf}.
+\bibitem{agz2017} \emph{Reeb Dynamics Inspired By Katok's Example In Finsler Geometry} P. Albers, H. Geiges, K. Zehmisch. \url{https://arxiv.org/abs/1705.08126}.
+\bibitem{cghp2018} \emph{Torsion Contact Forms In Three Dimensions Have Two Or Infinitely Many Reeb Orbits} D. Cristofaro-Gardiner, M. Hutchings, D. Pomerleano. \url{https://arxiv.org/abs/1701.02262}.
+\bibitem{ch2018} \emph{Computing Reeb Dynamics On 4d Polytopes} J. Chaidez, M. Hutchings. In preparation.
+\bibitem{gh2017} \emph{Symplectic Capacities From Positive $S^1$-Equivariant Symplectic Homology}. J. Gutt, M. Hutchings, \url{https://arxiv.org/abs/1707.06514}.
+\bibitem{m2018} \emph{Contact Forms With High Systolic Ratio In Arbitrary Dimensions} M. Saglam, \url{https://arxiv.org/abs/1806.01967}.
+\end{thebibliography}
+
+\end{document}
+
+
+
+
