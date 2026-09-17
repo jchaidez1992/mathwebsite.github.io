@@ -1,6 +1,7 @@
  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
 <title>Math 290: Symplectic Topology Learning Seminar</title>
 
@@ -42,6 +43,47 @@
 .contact {margin-top:10px; padding-top:5px; border-top: 1px solid #909090;  margin-bottom:10px; padding-bottom:10px;  text-align:center; -webkit-transition: opacity 0.3s ease-out; -moz-transition: opacity 0.3s ease-out; transition: opacity  0.3s ease-out;height:90px;}
 
 .section {margin-top:0px; padding-top:6px; border-top: 1px solid #909090;  margin-bottom:10px; padding-bottom:0px; -webkit-transition: opacity 0.3s ease-out; -moz-transition: opacity 0.3s ease-out}
+
+
+
+    /* Responsive layout */
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+        margin: 0;
+        padding: 20px;
+        min-height: 100vh;
+        font-size: 16px;
+        color: #000000;
+        background: #ffffff;
+    }
+    img { max-width: 100%; height: auto; }
+    a { overflow-wrap: anywhere; }
+
+    #schedule, #exercises {
+        position: static;
+        left: auto;
+        top: auto;
+        width: auto;
+        height: auto;
+        min-width: 0;
+    }
+
+    body {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 600px));
+        gap: 14px;
+        max-width: 1274px;
+        align-items: start;
+    }
+    #schedule { grid-column: 1; }
+    #exercises { grid-column: 2; }
+
+    @media (max-width: 800px) {
+        body { display: block; padding: 10px; }
+        #schedule, #exercises { width: 100%; margin: 0 0 12px; }
+        ul { padding-left: 30px; }
+    }
 
 </style>
 

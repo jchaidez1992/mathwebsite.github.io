@@ -3,146 +3,131 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-    
-<title>Julian Chaidez</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Julian Chaidez</title>
 
 <style type="text/css">
-    
-    #sidebar {font-size:16px;
-    padding: 2px;
-    left: 20px;
-    width: 250px;
-    text-align: center;
-    height:900px;
-    position: absolute;
-    top: 20px;
-    background-color:#ffffff;
-    border: 1px solid #909090;}
+    * { box-sizing: border-box; }
 
-    #info {font-size:16px;
-    padding: 10px;
-    left: 288px;
-    width: 400px;
-    text-align: left;
-    height:260px;
-    position: absolute;
-    top: 20px;
-    background-color:#ffffff;
-    border: 1px solid #909090;}
+    html { -webkit-text-size-adjust: 100%; }
 
-    #students {font-size:16px;
-    padding: 10px;
-    left: 288px;
-    width: 400px;
-    text-align: left;
-    height:166px;
-    position: absolute;
-    top: 314px;
-    background-color:#ffffff;
-    border: 1px solid #909090;}
+    body {
+        margin: 0;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 254px 422px minmax(0, 652px);
+        grid-template-rows: 280px 188px 232px minmax(167px, auto);
+        grid-template-areas:
+            "sidebar info work"
+            "sidebar students work"
+            "sidebar teaching work"
+            "sidebar miscellanea work";
+        gap: 14px;
+        max-width: 1396px;
+        min-height: 100vh;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 16px;
+        color: #000000;
+        background: #ffffff;
+    }
 
-    #blog {font-size:16px;
-    padding: 10px;
-    line-height: 1.2;
-    left: 288px;
-    width: 400px;
-    text-align: left;
-    height:25px;
-    position: absolute;
-    top: 455px;
-    background-color:#ffffff;
-    border: 1px solid #909090;}
+    #sidebar, #info, #students, #teaching, #miscellanea, #work {
+        min-width: 0;
+        padding: 10px;
+        background-color: #ffffff;
+        border: 1px solid #909090;
+    }
 
-    #teaching {font-size:16px;
-    padding: 10px;
-    line-height: 1.2;
-    left: 288px;
-    width: 400px;
-    text-align: left;
-    height:210px;
-    position: absolute;
-    top: 515px;
-    background-color:#ffffff;
-    border: 1px solid #909090;}
+    #sidebar { grid-area: sidebar; padding: 2px; text-align: center; }
+    #info { grid-area: info; text-align: left; }
+    #students { grid-area: students; text-align: left; }
+    #teaching { grid-area: teaching; text-align: left; line-height: 1.2; }
+    #miscellanea { grid-area: miscellanea; text-align: left; line-height: 1.2; }
+    #work { grid-area: work; text-align: left; line-height: 1.2; }
 
-    #teaching li {margin: 0 0 6px -15px;}
+    #sidebar img {
+        display: block;
+        width: 228px;
+        max-width: calc(100% - 20px);
+        height: auto;
+        margin: 0 auto;
+    }
 
-    #miscellanea {font-size:16px;
-    padding: 10px;
-    line-height: 1.2;
-    left: 288px;
-    width: 400px;
-    text-align: left;
-    height:145px;
-    position: absolute;
-    top: 759px;
-    background-color:#ffffff;
-    border: 1px solid #909090;}
+    #teaching li, #miscellanea li { margin: 0 0 6px -15px; }
+    #work li { margin: 0 0 7px -15px; }
 
-    #miscellanea li {margin: 0 0 6px -15px;}
+    a { overflow-wrap: anywhere; }
 
-    #calendar {font-size:16px;
-    line-height: 1.2;
-    padding: 10px;
-    left: 722px;
-    width: 630px;
-    text-align: left;
-    height:226px;
-    position: absolute;
-    top: 20px;
-    background-color:#ffffff;
-    border: 1px solid #909090;}
+    .address {
+        margin: 10px 0;
+        padding-top: 5px;
+        border-top: 1px solid #909090;
+        text-align: center;
+        transition: opacity 0.3s ease-out;
+    }
 
-    #calendar li {margin: 0 0 7px -15px;}
+    .address p, .contact p {
+        color: #000000;
+        margin: 1em 0;
+        transition: opacity 0.3s ease-out;
+    }
 
-    #work {font-size:16px;
-    line-height: 1.2;
-    padding: 10px;
-    left: 722px;
-    width: 630px;
-    text-align: left;
-    height:884px;
-    position: absolute;
-    top: 20px;
-    background-color:#ffffff;
-    border: 1px solid #909090;}
+    .contact {
+        margin: 10px 0;
+        padding: 5px 0 10px;
+        border-top: 1px solid #909090;
+        text-align: center;
+        transition: opacity 0.3s ease-out;
+    }
 
-    #work li {margin: 0 0 7px -15px;}
-    
-    #talks {font-size:16px;
-    line-height: 1.2;
-    padding: 10px;
-    left: 722px;
-    width: 630px;
-    text-align: left;
-    height:140px;
-    position: absolute;
-    top: 764px;
-    background-color:#ffffff;
-    border: 1px solid #909090;}
+    .contact a {
+        color: #000000;
+        transition: opacity 0.3s ease-out;
+    }
 
-    #talks li {margin: 0 0 7px -15px;}
+    @media (max-width: 1400px) {
+        body {
+            grid-template-columns: 254px minmax(0, 1fr);
+            grid-template-rows: auto;
+            grid-template-areas:
+                "sidebar info"
+                "sidebar students"
+                "sidebar teaching"
+                "sidebar miscellanea"
+                "work work";
+            max-width: none;
+        }
+    }
 
-.address {margin-top:10px; padding-top:5px; border-top: 1px solid #909090;  margin-bottom:10px; padding-bottom:0px;  text-align:center; -webkit-transition: opacity 0.3s ease-out; -moz-transition: opacity 0.3s ease-out; transition: opacity  0.3s ease-out;height: 117px;}
+    @media (max-width: 680px) {
+        body {
+            display: block;
+            padding: 10px;
+        }
 
-.address p {color:#000000; display:block; height: 8px; padding-top:0px; color:#000000; -webkit-transition: opacity 0.3s ease-out; -moz-transition: opacity 0.3s ease-out; transition: opacity 0.3s ease-out;}
-    
-.contact {margin-top:10px; padding-top:5px; border-top: 1px solid #909090;  margin-bottom:10px; padding-bottom:10px;  text-align:center; -webkit-transition: opacity 0.3s ease-out; -moz-transition: opacity 0.3s ease-out; transition: opacity  0.3s ease-out;height:90px;}
-    
-.contact a {color:#000000; display:block; height: 8px; padding-top:4px; color:#000000; -webkit-transition: opacity 0.3s ease-out; -moz-transition: opacity 0.3s ease-out; transition: opacity 0.3s ease-out}
-    
-.contact p {color:#000000; display:block; height: 8px; padding-top:0px; color:#000000; -webkit-transition: opacity 0.3s ease-out; -moz-transition: opacity 0.3s ease-out; transition: opacity 0.3s ease-out;}
+        #sidebar, #info, #students, #teaching, #miscellanea, #work {
+            width: 100%;
+            margin: 0 0 12px;
+            padding: 10px;
+        }
+
+        #sidebar { padding: 2px; }
+
+        #teaching ul, #miscellanea ul, #work ul {
+            padding-left: 30px;
+        }
+    }
 
 </style>
+</head>
 
 <body>
 
 <div id="sidebar">
     
     <div style="margin-top:10px; text-align:center;">
-        <img src="images/desmond.jpg" width="228"></a>
+        <img src="images/desmond.jpg" width="228" alt="Julian Chaidez" />
     </div>
     <div style="margin-top:10px; text-align:center;">
         <p>- Julian Chaidez -</p>
@@ -166,11 +151,11 @@
     - Info -
     </div>
 
-    <p> I am an assistant professor at the University of Southern California (USC) in Los Angeles. I am broadly interested in dynamical systems, symplectic topology and manifolds. I am generously supported by the NSF Award DMS-2446019 and USI Binational Science Foundation Award 2024157. </p>
+    <p> I am an assistant professor at the University of Southern California (USC) in Los Angeles. I am broadly interested in dynamical systems, symplectic topology and differential topology. I am generously supported by the NSF Award DMS-2446019 and USI BSF Award 2024157. </p>
 
     <p> I was previously an NSF Postdoctoral Fellow at Princeton-IAS supervised by Helmut Hofer. I received my PhD at UC Berkeley in 2021 supervised by <a href="https://math.berkeley.edu/~hutching/">Michael Hutchings </a>. </p>
 
-    <p> In Spring 2026, I am teaching  <a href="materials/26s_535a_syllabus.pdf"> Math 535A (Differential Topology)</a> and organizing the <a href=""> RTG MSRP at USC</a>. </p>
+    <p> In Fall 2026, I am member of the IAS for the special year on Conformally Symplectic Dynamics. </p>
 </div>
 
 <div id="students">
@@ -194,8 +179,9 @@
     <ul>
     <li type="circle"> USC teaching: <a href="materials/25f_535b_syllabus.pdf"> Fall 2025 </a>, <a href="materials/25s_641_syllabus.pdf"> Spring 2025 </a>, <a href="materials/24f_540_syllabus.html"> Fall 2024 </a>, <a href="materials/24s_535a_syllabus.pdf"> Spring 2024 </a> </li> 
     <li type="circle"> Princeton teaching: <a href="https://princeton.instructure.com/courses/8111"> Fall 2022, Spring 2023 </a></li> 
-    <li type="circle"> UC Berkeley seminars: <a href="GPSLS_f19.html"> Fall 2019</a>, <a href="MFHrg_s19.html"> Spring 2019</a>, <a href="drpf18.html"> Fall 2018</a>, <a href="reu18.html"> Summer 2018 </a>, <a href="fals_s18.html"> Fall 2018 <a><a href="sgts_f17.html"> Fall 2017</a> </li>
-    <li type="circle"> UC Berkeley teaching: Spring 2021, Fall 2020, <a href="https://math.berkeley.edu/~jchaidez/math16Bs20.html">Spring 2020</a>, <a href="https://math.berkeley.edu/~jchaidez/math16Bs20.html">Spring 2020</a>,  <a href="math290f16.html"> Fall 2016<a>, <a href="math55s16.html"> Spring 2016 <a> </li>
+    <li type="circle"> UC Berkeley seminars: <a href="GPSLS_f19.html"> Fall 2019</a>, <a href="MFHrg_s19.html"> Spring 2019</a>, <a href="drpf18.html"> Fall 2018</a>, <a href="reu18.html"> Summer 2018 </a>, <a href="fals_s18.html"> Fall 2018</a>, <a href="sgts_f17.html"> Fall 2017</a> </li>
+    <li type="circle"> UC Berkeley teaching: Spring 2021, Fall 2020, <a href="https://math.berkeley.edu/~jchaidez/math16Bs20.html">Spring 2020</a>, <a href="https://math.berkeley.edu/~jchaidez/math16Bs20.html">Spring 2020</a>, <a href="math290f16.html"> Fall 2016</a>, <a href="math55s16.html"> Spring 2016</a> </li>
+    </ul>
 </div>
 
 <div id="miscellanea">
@@ -205,9 +191,9 @@
     <p>
     </p>
     <ul>
-    <li type="circle">  Solutions to <i>Characteristic Classes</i> by J. Milnor &amp J. Stasheff [<a href="solutions/characteristicclasses.pdf">pdf</a>]</li>
-    <li type="circle">  Solutions to <i>Introduction To Symplectic Topology (2nd Ed.)</i> by D. McDuff &amp D. Salamon [<a href="solutions/salamonmcduff.pdf">pdf</a>]</li>
-    <li type="circle">  Beware: Full of small mistakes and typos!
+    <li type="circle">  Solutions to <i>Characteristic Classes</i> by J. Milnor &amp; J. Stasheff [<a href="solutions/characteristicclasses.pdf">pdf</a>]</li>
+    <li type="circle">  Solutions to <i>Introduction To Symplectic Topology (2nd Ed.)</i> by D. McDuff &amp; D. Salamon [<a href="solutions/salamonmcduff.pdf">pdf</a>]</li>
+    <li type="circle">  Beware: Full of small mistakes and typos!</li>
     </ul>
 </div>
 
@@ -237,7 +223,7 @@
     <li type="square"> J. Chaidez, B. Wormleighton. <i>ECH Embedding Obstructions For Rational Surfaces</i>. [<a href="https://arxiv.org/abs/2008.10125">arxiv</a>] </li>
     <li type="square"> J. Chaidez, J. Cotler, X. Cui. <i>4-Manifold Invariants From Hopf Algebras</i>. Algebraic and Geometric Topology 22 (2022) p. 3747-3807 [<a href="https://arxiv.org/abs/1910.14662">arxiv</a>, <a href="https://msp.org/agt/2022/22-8/agt-v22-n8-p05-p.pdf">journal</a>] </li>
     <li type="square"> J. Chaidez, C. Munteanu. <i>Essential Tori In Spaces Of Symplectic Embeddings</i>. Algebraic and Geometric Topology 21 (2021) p. 2489–2522 [<a href="https://arxiv.org/abs/1903.08340">arxiv</a>, <a href="https://msp.org/agt/2021/21-5/agt-v21-n5-p09-p.pdf">journal</a>]</li>
-    <li> Note: Preprints marked with &#9632 are submitted, under revision or published.
+    <li> Note: Preprints marked with &#9632; are submitted, under revision or published.</li>
     </ul>
 
 </div>

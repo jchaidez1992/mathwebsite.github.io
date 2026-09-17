@@ -1,8 +1,9 @@
  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-<title>Math 540 Fall 2024</title>
+<title>Math 641 25F </title>
 
 <style type="text/css">
     
@@ -82,6 +83,69 @@
 
 .section {margin-top:0px; padding-top:6px; border-top: 1px solid #909090;  margin-bottom:10px; padding-bottom:0px; -webkit-transition: opacity 0.3s ease-out; -moz-transition: opacity 0.3s ease-out}
 
+
+
+    /* Responsive layout */
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+        margin: 0;
+        padding: 20px;
+        min-height: 100vh;
+        font-size: 16px;
+        color: #000000;
+        background: #ffffff;
+    }
+    img { max-width: 100%; height: auto; }
+    a { overflow-wrap: anywhere; }
+
+    #sidebar, #coursedescription, #coursesyllabus, #homeworkschedule, #extras {
+        position: static;
+        left: auto;
+        top: auto;
+        width: auto;
+        height: auto;
+        min-width: 0;
+    }
+
+    body {
+        display: grid;
+        grid-template-columns: 264px 467px minmax(0, 522px);
+        grid-template-areas:
+            "sidebar coursedescription extras"
+            "sidebar coursesyllabus extras"
+            "sidebar homeworkschedule extras";
+        gap: 14px;
+        max-width: 1321px;
+        align-items: stretch;
+    }
+    #sidebar { grid-area: sidebar; }
+    #coursedescription { grid-area: coursedescription; }
+    #coursesyllabus { grid-area: coursesyllabus; }
+    #homeworkschedule { grid-area: homeworkschedule; }
+    #extras { grid-area: extras; }
+
+    @media (max-width: 1321px) {
+        body {
+            grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
+            grid-template-areas:
+                "sidebar coursedescription"
+                "sidebar coursesyllabus"
+                "sidebar homeworkschedule"
+                "extras extras";
+            max-width: none;
+        }
+    }
+
+    @media (max-width: 680px) {
+        body { display: block; padding: 10px; }
+        #sidebar, #coursedescription, #coursesyllabus, #homeworkschedule, #extras {
+            width: 100%;
+            margin: 0 0 12px;
+        }
+        ul { padding-left: 30px; }
+    }
+
 </style>
 
 <body>
@@ -89,15 +153,13 @@
 <div id="sidebar">
     
     <div style="margin-top:5px; text-align:center;">
-        <img src="images/poincare_0.png" width="250">
-        <img src="images/poincare_1.png" width="250">
-        <img src="images/poincare_2.png" width="250">
+        <img src="images/sft_building.png" width="250">
     </div>
-    <p> Original figures from Poincare's 5th <i> l’Analysis Situs</i> paper, where the Poincare conjecture is posed. The last figure depicts the Poincare homology sphere.</p>
+    <p> A holomorphic building in SFT </p>
     <div class="contact">
-         <p>- Math 540: Algebraic Topology -</p>
+         <p>- Math 641: Floer Theory -</p>
         <p>- USC Math Department -</p>
-        <p>- Fall 2024 -</p>
+        <p>- Spring 2025 -</p>
     </div>
 </div>
 
